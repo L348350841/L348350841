@@ -1,4 +1,5 @@
-- 📫 How to reach me QQ：348350841    嵌入式项目在L348350841里面
+- 📫 How to reach me QQ：348350841
+- 嵌入式项目在L348350841里面
 - 个人信息：
 1、熟悉 STM32 开发，参与基于 FreeRTOS的人员定位开发，具备传感器数据采集（如温湿度、加速度计）、中断管理、低功耗优化、无线通信（如Wi-Fi/BLE/NRF/UWB）、TCP/IP通信经验。熟悉 Keil/vitiis等开发环境，擅长模块化编程与调试。
 2、开发过 Linux 嵌入式设备驱动（如 GPIO、IIC、LCD 触摸屏），具备扎实的 ARM Cortex-M系列 开发经验。
