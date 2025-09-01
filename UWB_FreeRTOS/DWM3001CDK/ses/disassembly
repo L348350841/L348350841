@@ -1,0 +1,350 @@
+    2000FA0C    .word 0x2000FA0C
+    00066EE8    .word 0x00066EE8
+    2001020C    .word 0x2001020C
+    2001829C    .word 0x2001829C
+    20010228    .word 0x20010228
+    200196E4    .word 0x200196E4
+--- task_uci.c -- 193 --------------------------------------
+void uci_task(void const *argument)
+{
+int err;
+uciTask.Exit = 0;
+    B5F0        push {r4-r7, lr}
+    4D60        ldr r5, =0x200196E4 <uciTask>
+    B089        sub sp, sp, #0x24
+    2300        movs r3, #0
+    612B        str r3, [r5, #16]
+--- task_uci.c -- 198 --------------------------------------
+/* Initialize MCPS */
+enter_critical_section();
+    F7F1FB23    bl 0x000227B8 <vPortEnterCritical>
+--- task_uci.c -- 200 --------------------------------------
+uwbmac_helper_init_mcps();
+    F000FA1D    bl 0x000315B0 <uwbmac_helper_init_mcps>
+--- task_uci.c -- 201 --------------------------------------
+leave_critical_section();
+    F7F1FB29    bl 0x000227CC <vPortExitCritical>
+--- task_uci.c -- 202 --------------------------------------
+/* Initialize MAC */
+err = uwbmac_init(&ctx.uwbmac_ctx);
+    485C        ldr r0, =0x20018298 <ctx>
+    F01AFBE8    bl 0x0004B950 <uwbmac_init>
+--- task_uci.c -- 205 --------------------------------------
+assert(err == UWBMAC_SUCCESS);
+    2800        cmp r0, #0
+    F04080AA    bne.w 0x000312DA
+--- task_uci.c -- 206 --------------------------------------
+/* Initialize UCI server */
+uwbmac_error ret;
+ret = uci_init(&ctx.uci_server, (struct uci_allocator *)&simple_allocator, false);
+    495A        ldr r1, =0x00066EDC <simple_allocator>
+    485A        ldr r0, =0x2001829C
+    2200        movs r2, #0
+    F018FFFA    bl 0x0004A184 <uci_init>
+--- task_uci.c -- 211 --------------------------------------
+assert(ret == UWBMAC_SUCCESS);
+    2800        cmp r0, #0
+    F040809C    bne.w 0x000312CE
+--- task_uci.c -- 212 --------------------------------------
+/* Initialize coordinator and session manager */
+default_coordinator_init(&ctx.coord, ctx.uwbmac_ctx);
+    4C55        ldr r4, =0x20018298 <ctx>
+    4E57        ldr r6, =0x200194BC
+    4620        mov r0, r4
+    F8501B38    ldr r1, [r0], #0x38
+    F013FF0A    bl 0x00044FB8 <default_coordinator_init>
+--- task_uci.c -- 215 --------------------------------------
+/* Initialize fira/CCC backend */
+uci_backend_manager_init(&ctx.sess_man, &ctx.uci_server, ctx.uwbmac_ctx);
+    4621        mov r1, r4
+    4630        mov r0, r6
+    F8512B04    ldr r2, [r1], #4
+    F018FE0E    bl 0x00049DCC <uci_backend_manager_init>
+--- task_uci.c -- 218 --------------------------------------
+#ifdef UCI_FIRA_BACKEND
+/* Initilize UWB driver for FiRa */
+enter_critical_section();
+    F7F1FB02    bl 0x000227B8 <vPortEnterCritical>
+--- task_uci.c -- 222 --------------------------------------
+uwbmac_helper_init_fira();
+    F000F9E0    bl 0x00031578 <uwbmac_helper_init_fira>
+--- task_uci.c -- 223 --------------------------------------
+leave_critical_section();
+    F7F1FB08    bl 0x000227CC <vPortExitCritical>
+--- task_uci.c -- 224 --------------------------------------
+/* Initialize FiRa backend */
+err = uci_backend_fira_init(&ctx.fira_ctx, &ctx.uci_server, ctx.uwbmac_ctx, &ctx.coord.base, &ctx.sess_man);
+    4623        mov r3, r4
+    1D21        adds r1, r4, #4
+    F8532B40    ldr r2, [r3], #0x40
+    9600        str r6, [sp]
+    F1040048    add.w r0, r4, #0x48
+    F017FD27    bl 0x00048C1C <uci_backend_fira_init>
+--- task_uci.c -- 227 --------------------------------------
+assert(!err);
+    2800        cmp r0, #0
+    D177        bne 0x000312C2
+--- task_uci.c -- 228 --------------------------------------
+if (hal_uwb.is_aoa() == AOA_ENABLED)
+    4E4A        ldr r6, =0x200002F0 <hal_uwb>
+    6D73        ldr r3, [r6, #0x54]
+    4798        blx r3
+    6EA3        ldr r3, [r4, #0x68]
+    2801        cmp r0, #1
+--- task_uci.c -- 230 --------------------------------------
+{
+ctx.fira_ctx.antennas->aoa_capability = 1;
+    BF1A        itte ne
+    2200        movne r2, #0
+    F8832038    strbne.w r2, [r3, #0x38]
+    F8830038    strbeq.w r0, [r3, #0x38]
+--- task_uci.c -- 261 --------------------------------------
+uci_uart_init();
+#endif
+uint8_t device_info[12];
+uint32_t device_id = dwt_readdevid();
+    F006FC42    bl 0x00037A70 <dwt_readdevid>
+    4604        mov r4, r0
+--- task_uci.c -- 266 --------------------------------------
+uint32_t part_id = dwt_getpartid();
+    F006FC2D    bl 0x00037A4C <dwt_getpartid>
+--- task_uci.c -- 272 --------------------------------------
+device_info[4] = part_id & (0xFF);
+device_info[5] = (part_id >> 8) & (0xFF);
+device_info[6] = (part_id >> 16) & (0xFF);
+device_info[7] = (part_id >> 24) & (0xFF);
+    F2401201    movw r2, #0x0101
+    E9CD4002    strd r4, r0, [sp, #8]
+--- task_uci.c -- 277 --------------------------------------
+device_info[8] = VER_PATCH;
+device_info[9] = VER_MINOR;
+    2400        movs r4, #0
+    6D73        ldr r3, [r6, #0x54]
+    F8AD2010    strh.w r2, [sp, #16]
+--- task_uci.c -- 280 --------------------------------------
+device_info[10] = VER_MAJOR;
+    F88D4012    strb.w r4, [sp, #18]
+--- task_uci.c -- 281 --------------------------------------
+device_info[11] = hal_uwb.is_aoa();
+    4798        blx r3
+    220C        movs r2, #12
+    A902        add r1, sp, #8
+    F88D0013    strb.w r0, [sp, #19]
+--- task_uci.c -- 283 --------------------------------------
+uci_backend_manager_set_vendor_data(&ctx.sess_man, device_info, sizeof(device_info));
+    4839        ldr r0, =0x200194BC
+    F018FF93    bl 0x0004A13C <uci_backend_manager_set_vendor_data>
+--- task_uci.c -- 285 --------------------------------------
+uci_backend_fira_set_reset_callback(&ctx.fira_ctx, uci_reset_cb, NULL);
+    493A        ldr r1, =0x00031015 <uci_reset_cb>
+    483A        ldr r0, =0x200182E0
+    4622        mov r2, r4
+    F017FCB4    bl 0x00048B88 <uci_backend_fira_set_reset_callback>
+--- task_uci.c -- 287 --------------------------------------
+while (uciTask.Exit == 0)
+    692B        ldr r3, [r5, #16]
+    2B00        cmp r3, #0
+    D140        bne 0x000312A8
+    4F38        ldr r7, =0x200002C4 <tr>
+    E004        b 0x00031234
+--- task_uci.c -- 300 --------------------------------------
+bsp_board_led_on(BSP_BOARD_LED_1);
+uci_task_process_last();
+}
+if(evt.value.signals & UCI_START_DATA)
+    07A3        lsls r3, r4, #30
+    D423        bmi 0x00031276
+--- task_uci.c -- 288 --------------------------------------
+while (uciTask.Exit == 0)
+    692B        ldr r3, [r5, #16]
+    2B00        cmp r3, #0
+    D139        bne 0x000312A8
+--- task_uci.c -- 289 --------------------------------------
+{
+//下面给了UCI_DATA信号为什么不往下运行？
+osEvent evt = osSignalWait(uciTask.SignalMask, osWaitForever);//虽然 uci_task 一开始就运行，但它会被 osSignalWait() 阻塞，直到接收到信号;
+    68A9        ldr r1, [r5, #8]
+    F04F32FF    mov.w r2, #0xFFFFFFFF
+    A805        add r0, sp, #20
+    F001FCA2    bl 0x00032B84 <osSignalWait>
+--- task_uci.c -- 294 --------------------------------------
+{
+break;
+}
+if(evt.value.signals & LAST_CMD)
+    9C06        ldr r4, [sp, #24]
+--- task_uci.c -- 293 --------------------------------------
+if (evt.value.signals & STOP_TASK)//停止信号
+    F0140601    ands r6, r4, #1
+    D12F        bne 0x000312A8
+    0762        lsls r2, r4, #29
+    D5EE        bpl 0x0003122A
+--- task_uci.c -- 296 --------------------------------------
+}
+if(evt.value.signals & LAST_CMD)
+{
+bsp_board_led_on(BSP_BOARD_LED_1);
+    2001        movs r0, #1
+    F7EDFFF9    bl 0x0001F244 <bsp_board_led_on>
+--- task_uci.c -- 350 --------------------------------------
+{
+int ret;
+switch (tr.uci_if)
+    7C3B        ldrb r3, [r7, #16]
+    2B01        cmp r3, #1
+    D1EA        bne 0x0003122E
+--- task_uci.c -- 355 --------------------------------------
+{
+case (UCI_UART0):
+ret = uci_tp_read(&tr);//发送uci指令
+    482B        ldr r0, =0x200002C4 <tr>
+    F000F897    bl 0x0003138C <uci_tp_read>
+--- task_uci.c -- 358 --------------------------------------
+if (ret > 0)//有效数据
+{
+memset(local_buff, 0, sizeof(local_buff));//将 local_buff缓存区A清零。
+    2800        cmp r0, #0
+    F44F6200    mov.w r2, #0x0800
+    DDE1        ble 0x0003122A
+    4829        ldr r0, =0x2000FA0C <local_buff>
+    4631        mov r1, r6
+    F006F995    bl 0x00037598 <memset>
+--- task_uci.c -- 361 --------------------------------------
+local_buff_length = 0;
+    4B28        ldr r3, =0x2001020C <local_buff_length>
+    801E        strh r6, [r3]
+--- task_uci.c -- 304 --------------------------------------
+if(evt.value.signals & UCI_START_DATA)
+    07A3        lsls r3, r4, #30
+    D5DB        bpl 0x0003122E
+--- task_uci.c -- 319 --------------------------------------
+{
+int ret;
+switch (tr.uci_if)
+    7C3B        ldrb r3, [r7, #16]
+    2B01        cmp r3, #1
+    D1D8        bne 0x0003122E
+--- task_uci.c -- 324 --------------------------------------
+{
+case (UCI_UART0):
+ret = uci_tp_read(&tr);//发送uci指令
+    4822        ldr r0, =0x200002C4 <tr>
+    F000F885    bl 0x0003138C <uci_tp_read>
+--- task_uci.c -- 327 --------------------------------------
+if (ret > 0)//有效数据
+{
+memset(local_buff, 0, sizeof(local_buff));//将 local_buff缓存区A清零。
+    2100        movs r1, #0
+    4288        cmp r0, r1
+    F44F6200    mov.w r2, #0x0800
+    DDD0        ble 0x0003122E
+    481F        ldr r0, =0x2000FA0C <local_buff>
+    F006F983    bl 0x00037598 <memset>
+--- task_uci.c -- 330 --------------------------------------
+local_buff_length = 0;
+    4920        ldr r1, =0x20010210 <ctrlTask>
+    4B1E        ldr r3, =0x2001020C <local_buff_length>
+    6808        ldr r0, [r1]
+    2200        movs r2, #0
+    2108        movs r1, #8
+    801A        strh r2, [r3]
+--- task_uci.c -- 331 --------------------------------------
+osSignalSet(ctrlTask.Handle, SIGNAL_NEXTCMD);
+    F001FC47    bl 0x00032B30 <osSignalSet>
+--- task_uci.c -- 288 --------------------------------------
+while (uciTask.Exit == 0)
+    692B        ldr r3, [r5, #16]
+    2B00        cmp r3, #0
+    D0C5        beq 0x00031234
+--- task_uci.c -- 306 --------------------------------------
+uci_task_process();
+}
+}
+uciTask.Exit = 2;
+    2302        movs r3, #2
+    612B        str r3, [r5, #16]
+--- task_uci.c -- 311 --------------------------------------
+while (uciTask.Exit == 2)
+    692B        ldr r3, [r5, #16]
+    2B02        cmp r3, #2
+    D105        bne 0x000312BE
+--- task_uci.c -- 312 --------------------------------------
+{
+osDelay(1);
+    2001        movs r0, #1
+    F001FC34    bl 0x00032B20 <osDelay>
+--- task_uci.c -- 311 --------------------------------------
+while (uciTask.Exit == 2)
+    692B        ldr r3, [r5, #16]
+    2B02        cmp r3, #2
+    D0F9        beq 0x000312B2
+    B009        add sp, sp, #0x24
+    BDF0        pop {r4-r7, pc}
+    4915        ldr r1, =0x00062CEC
+    4815        ldr r0, =0x00062D7C
+    22E3        movs r2, #0xE3
+    F004F840    bl 0x0003534C <__aeabi_assert>
+    E781        b 0x000311D2
+    4912        ldr r1, =0x00062CEC
+    4813        ldr r0, =0x00062D64
+    22D3        movs r2, #0xD3
+    F004F83A    bl 0x0003534C <__aeabi_assert>
+    E75D        b 0x00031196
+    490F        ldr r1, =0x00062CEC
+    4811        ldr r0, =0x00062D4C
+    22CD        movs r2, #0xCD
+    F004F834    bl 0x0003534C <__aeabi_assert>
+    E74F        b 0x00031186
+    BF00        nop
+    200196E4    .word 0x200196E4
+    20018298    .word 0x20018298
+    00066EDC    .word 0x00066EDC
+    2001829C    .word 0x2001829C
+    200194BC    .word 0x200194BC
+    200002F0    .word 0x200002F0
+    00031015    .word 0x00031015
+    200182E0    .word 0x200182E0
+    200002C4    .word 0x200002C4
+    2000FA0C    .word 0x2000FA0C
+    2001020C    .word 0x2001020C
+    20010210    .word 0x20010210
+    00062CEC    .word 0x00062CEC
+    00062D7C    .word 0x00062D7C
+    00062D64    .word 0x00062D64
+    00062D4C    .word 0x00062D4C
+--- uci_transport.c -- 78 ----------------------------------
+static uint32_t tmr_rd;
+//将 UCI 实例附加到传输层（uci_transport）中，并启动一个定时器
+void uci_tp_attach(struct uci_transport *tr, struct uci *uci)
+{
+struct uci_tp *s = container_of(tr, struct uci_tp, tr);
+    4602        mov r2, r0
+--- uci_transport.c -- 83 ----------------------------------
+s->uci = uci;
+    4B02        ldr r3, =0x00066FF8 <Timer>
+    4802        ldr r0, =0x200196FC <tmr_rd>
+    685B        ldr r3, [r3, #4]
+    6051        str r1, [r2, #4]
+--- uci_transport.c -- 85 ----------------------------------
+Timer.start(&tmr_rd);
+    4718        bx r3
+    00066FF8    .word 0x00066FF8
+    200196FC    .word 0x200196FC
+--- uci_transport.c -- 86 ----------------------------------
+}
+void uci_tp_detach(struct uci_transport *tr)
+{
+struct uci_tp *s = container_of(tr, struct uci_tp, tr);
+    B538        push {r3-r5, lr}
+    4D06        ldr r5, =0x20019704 <rx>
+    6829        ldr r1, [r5]
+    4604        mov r4, r0
+--- uci_transport.c -- 91 ----------------------------------
+if (rx)
+    B111        cbz r1, 0x0003134C
+--- uci_transport.c -- 93 ----------------------------------
+uci_blk_free_all(s->uci, rx);
+    6840        ldr r0, [r0, #4]
+    F018FF84    bl 0x0004A254 <uci_blk_free_all>
+--- uci_transport.c -- 94 ----------------------------------
+rx_offset = 0;

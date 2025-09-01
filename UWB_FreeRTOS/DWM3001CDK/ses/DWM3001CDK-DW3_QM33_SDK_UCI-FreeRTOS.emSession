@@ -1,0 +1,146 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks>
+  <BookmarkItem objectName="" line="95" column="-1" path="C:/Users/16868/Desktop/DWM3001CDK-DW3_QM33_SDK-FreeRTOS/Src/Boards/Src/DWM3001CDK/FreeRTOS/DW3_QM33_SDK/DWM3001CDK.c" number="4" extra="#ifndef ENABLE_USB_PRINT//???" color="5"/>
+  <BookmarkItem objectName="" line="98" column="-1" path="C:/Users/16868/Desktop/DWM3001CDK-DW3_QM33_SDK-FreeRTOS/Src/Boards/Src/DWM3001CDK/FreeRTOS/DW3_QM33_SDK/DWM3001CDK.c" number="1" extra="NRF_LOG_DEFAULT_BACKENDS_INIT();" color="5"/>
+ </Bookmarks>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
+ <ExecutionProfileWindow/>
+ <FrameBuffer>
+  <FrameBufferWindow width="852040" keepAspectRatio="0" zoomToFitWindow="0" addressSpace="" format="0" height="-80" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" addressText="" accessByDisplayWidth="0"/>
+ </FrameBuffer>
+ <Memory1>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" sizeText="" addressText=""/>
+ </Memory1>
+ <Memory2>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" sizeText="" addressText=""/>
+ </Memory2>
+ <Memory3>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" sizeText="" addressText=""/>
+ </Memory3>
+ <Memory4>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" sizeText="" addressText=""/>
+ </Memory4>
+ <Project>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Projects"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Projects;DW3_QM33_SDK"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Projects;DW3_QM33_SDK;FreeRTOS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Projects;DW3_QM33_SDK;FreeRTOS;DW3_QM33_SDK-FreeRTOS-Common"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Projects;DW3_QM33_SDK;FreeRTOS;DWM3001CDK"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Projects;DW3_QM33_SDK;FreeRTOS;DWM3001CDK;ProjectDefinition"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;components"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;components;boards"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;components;libraries"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;components;libraries;uart"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;components;libraries;util"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;external"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;external;freertos"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;external;freertos;portable"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;external;freertos;portable;CMSIS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;external;freertos;portable;CMSIS;nrf52"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;modules"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;modules;nrfx"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;modules;nrfx;drivers"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;SDK_BSP;Nordic;NORDIC_SDK_17_1_0;modules;nrfx;drivers;src"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common;config"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common;controlTask"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common;controlTask;FreeRTOS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common;flushTask"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common;uartTask"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common;uartTask;FreeRTOS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;common;usb_uart"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;fira"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;reporter"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;reporter;usb_reporter"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;uci"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;uci;FreeRTOS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;uci;task_uci"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;uci;uci_transport"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;uci;uci_transport;src"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;uci;uwbmac_helper"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Apps;Src;uci;uwbmac_helper;src"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Boards"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Boards;Src"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Boards;Src;Common_NRF"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Boards;Src;DWM3001CDK"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Boards;Src;DWM3001CDK;FreeRTOS"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;Boards;Src;DWM3001CDK;FreeRTOS;DW3_QM33_SDK"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;HAL"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;HAL;Src"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;HAL;Src;nrfx"/>
+  <ProjectSessionItem path="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS;Src;UWB"/>
+ </Project>
+ <Register1>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register1>
+ <Register2>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register2>
+ <Register3>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register3>
+ <Register4>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS_Common" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register4>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never">
+   <Watchpoint expression="p->data[0] " name="p->data[0] " radix="16" linenumber="175" filename="../../../../../Src/Apps/Src/uci/uci_transport/src/uci_transport.c"/>
+   <Watchpoint expression="p->len" name="p->len" radix="16" linenumber="179" filename="../../../../../Src/Apps/Src/uci/uci_transport/src/uci_transport.c"/>
+   <Watchpoint expression="local_buff_length" name="local_buff_length" radix="-1" linenumber="362" filename="../../../../../Src/Apps/Src/uci/task_uci/task_uci.c"/>
+   <Watchpoint expression="esp_data[1]" name="esp_data[1]" radix="-1" linenumber="128" filename="../../../../../Src/Apps/Src/uci/uci_transport/src/uci_transport.c"/>
+  </Watches>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="10" y="44" useTextEdit="1" path="../../DW3_QM33_SDK-FreeRTOS-Common/main.c" left="0" top="7" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="146" useTextEdit="1" path="../../../../../Src/Apps/Src/common/controlTask/controlTask.c" left="0" selected="1" top="38" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="72" useTextEdit="1" path="../../../../../Src/Apps/Src/common/usb_uart/usb_uart_tx.c" left="0" top="72" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="478" useTextEdit="1" path="../../../../../Src/Apps/Src/uci/task_uci/task_uci.c" left="0" top="424" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="77" useTextEdit="1" path="../../../../../Src/Apps/Src/common/flushTask/flushTask.c" left="0" top="56" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="50" y="119" useTextEdit="1" path="../../../../../Src/Apps/Src/common/uartTask/uartTask.c" left="0" top="92" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="61" y="126" useTextEdit="1" path="../../../../../Src/Apps/Src/uci/uci_transport/src/uci_transport.c" left="0" top="116" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="79" y="62" useTextEdit="1" path="../../../../../Src/Apps/Src/common/controlTask/FreeRTOS/create_control_task.c" left="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="60" useTextEdit="1" path="../../../../../Src/Apps/Src/uci/task_uci/task_uci.h" left="0" top="34" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="71" y="53" useTextEdit="1" path="../../../../../Src/Apps/Src/uci/FreeRTOS/create_uci_task.c" left="0" top="17" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="79" y="210" useTextEdit="1" path="../../../../../SDK_BSP/Nordic/NORDIC_SDK_17_1_0/components/libraries/uart/app_uart_fifo.c" left="0" top="198" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="502" useTextEdit="1" path="../../../../../Libs/uwbstack/uwbstack_lib/include/uci/uci/uci.h" left="0" top="477" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="132" useTextEdit="1" path="../../../../../SDK_BSP/Nordic/NORDIC_SDK_17_1_0/modules/nrfx/drivers/src/nrfx_wdt.c" left="0" top="112" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="78" useTextEdit="1" path="../../../../../Src/Boards/Src/DWM3001CDK/FreeRTOS/DW3_QM33_SDK/DWM3001CDK.c" left="0" top="67" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="152" useTextEdit="1" path="../../../../../Src/HAL/Inc/HAL_uwb.h" left="0" top="112" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="33" y="95" useTextEdit="1" path="../../../../../Src/Boards/Src/DWM3001CDK/rf_tuning_config.c" left="0" top="82" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="124" y="263" useTextEdit="1" path="../../../../../Src/UWB/dw3000_calib_mcu.c" left="0" top="209" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="37" y="68" useTextEdit="1" path="../../../../../Src/Apps/Src/uci/uwbmac_helper/src/uwbmac_helper_dw3000.c" left="0" top="60" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="14" y="92" useTextEdit="1" path="../../../../../Src/Apps/Src/common/config/driver_app_config.c" left="0" top="54" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="68" useTextEdit="1" path="../../../../../Src/AppConfig/DefaultConfigs/DW3_QM33_SDK/default_config.h" left="0" top="46" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="62" useTextEdit="1" path="../../../../../Src/Apps/Src/fira/fira_dw3000.c" left="0" top="62" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="108" y="3227" useTextEdit="1" path="../../../../../Libs/dwt_uwb_driver/Inc/deca_device_api.h" left="0" top="3225" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="11" y="1406" useTextEdit="1" path="../../../../../Src/UWB/dw3000_mcps_mcu.c" left="0" top="1383" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="95" useTextEdit="1" path="../../../../../Src/Apps/Src/common/app/common/app.h" left="0" top="95" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="DWM3001CDK-DW3_QM33_SDK_UCI-FreeRTOS" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Common" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/16868/Desktop/9.8/NDWM3001CDK-DW3_QM33_SDK-FreeRTOS/Src/Apps/Src/common/uartTask/FreeRTOS" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
